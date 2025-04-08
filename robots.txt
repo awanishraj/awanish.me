@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://awanish.me/sitemap.xml
