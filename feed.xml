@@ -3,10 +3,32 @@
     <title>awanish.me</title>
     <link href="https://awanish.me/feed.xml" rel="self" />
     <link href="https://awanish.me" />
-    <updated>1970-01-01T05:30:00+05:30</updated>
+    <updated>2025-04-09T09:08:11+05:30</updated>
     <author>
         <name>Awanish Raj</name>
     </author>
     <id>https://awanish.me</id>
 
+    <entry>
+        <title>Hello, World!</title>
+        <author>
+            <name>Awanish Raj</name>
+        </author>
+        <link href="https://awanish.me/a-new-post.html"/>
+        <id>https://awanish.me/a-new-post.html</id>
+
+        <updated>2025-04-09T08:27:08+05:30</updated>
+            <summary>
+                <![CDATA[
+                    After 7 years of meticulous planning, I have finally decided to publish&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p class="" data-start="129" data-end="363">After 7 years of meticulous planning, I have finally decided to publish a personal blog. You might be wondering, why did it take 7 years? Well, that makes the two of us (or many of us? But I shouldn’t get ahead of myself).</p>
+<p class="" data-start="365" data-end="560">These 7 years have been a typical case of analysis paralysis. Worrying about the sea of options rather than just going ahead and doing it. Glad I’m out of it. Excited to publish a space of my own.</p>
+<p data-start="365" data-end="560">Thanks for being here :)</p>
+            ]]>
+        </content>
+    </entry>
 </feed>

@@ -9,5 +9,19 @@
         "name": "Awanish Raj"
     },
     "items": [
+        {
+            "id": "https://awanish.me/a-new-post.html",
+            "url": "https://awanish.me/a-new-post.html",
+            "title": "Hello, World!",
+            "summary": "After 7 years of meticulous planning, I have finally decided to publish&hellip;",
+            "content_html": "<p class=\"\" data-start=\"129\" data-end=\"363\">After 7 years of meticulous planning, I have finally decided to publish a personal blog. You might be wondering, why did it take 7 years? Well, that makes the two of us (or many of us? But I shouldn’t get ahead of myself).</p>\n<p class=\"\" data-start=\"365\" data-end=\"560\">These 7 years have been a typical case of analysis paralysis. Worrying about the sea of options rather than just going ahead and doing it. Glad I’m out of it. Excited to publish a space of my own.</p>\n<p data-start=\"365\" data-end=\"560\">Thanks for being here :)</p>",
+            "author": {
+                "name": "Awanish Raj"
+            },
+            "tags": [
+            ],
+            "date_published": "2025-04-09T08:27:08+05:30",
+            "date_modified": "2025-04-09T09:08:11+05:30"
+        }
     ]
 }
