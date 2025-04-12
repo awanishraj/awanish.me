@@ -3,7 +3,7 @@
     <title>awanish.me</title>
     <link href="https://awanish.me/feed.xml" rel="self" />
     <link href="https://awanish.me" />
-    <updated>2025-04-12T15:54:20+05:30</updated>
+    <updated>2025-04-12T18:21:48+05:30</updated>
     <author>
         <name>Awanish Raj</name>
     </author>
@@ -17,8 +17,7 @@
         <link href="https://awanish.me/this-world-was-not-meant-for-us.html"/>
         <id>https://awanish.me/this-world-was-not-meant-for-us.html</id>
         <media:content url="https://awanish.me/media/posts/5/ChatGPT-Image-Apr-12-2025-12_16_54-PM-1.png" medium="image" />
-            <category term="philosophy"/>
-            <category term="existential"/>
+            <category term="Philosophy"/>
 
         <updated>2025-04-12T09:38:39+05:30</updated>
             <summary>
@@ -69,8 +68,8 @@
         <link href="https://awanish.me/simplicity-is-harder-than-complexity-bonus-the-non-tech-stack-of-this-blog.html"/>
         <id>https://awanish.me/simplicity-is-harder-than-complexity-bonus-the-non-tech-stack-of-this-blog.html</id>
         <media:content url="https://awanish.me/media/posts/4/ChatGPT-Image-Apr-10-2025-02_47_47-PM-1-2.png" medium="image" />
-            <category term="technology"/>
-            <category term="philosophy"/>
+            <category term="Technology"/>
+            <category term="Philosophy"/>
 
         <updated>2025-04-10T09:33:13+05:30</updated>
             <summary>
@@ -110,8 +109,8 @@
         <link href="https://awanish.me/ai-images-and-the-library-of-babel.html"/>
         <id>https://awanish.me/ai-images-and-the-library-of-babel.html</id>
         <media:content url="https://awanish.me/media/posts/3/Screenshot-2025-04-12-at-9.09.23-AM.png" medium="image" />
-            <category term="technology"/>
-            <category term="philosophy"/>
+            <category term="Technology"/>
+            <category term="Curiosity"/>
 
         <updated>2025-04-09T22:09:13+05:30</updated>
             <summary>
