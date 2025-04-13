@@ -49,7 +49,7 @@
 <h3>Phase 1: Setting up HTML and JS</h3>
 <p>Here’s a basic HTML file that sets up 2 buttons, a span to display the counter, and a script tag to import JavaScript.</p>
 <p><code><strong>index.html</strong></code></p>
-<pre class="language-html line-numbers"><code>&lt;html&gt;
+<pre class="language-html"><code>&lt;html&gt;
   &lt;body&gt;
     &lt;div id="container"&gt;
       &lt;button onclick="decrement()"&gt;Dec&lt;/button&gt;
@@ -60,7 +60,7 @@
   &lt;/body&gt;
 &lt;/html&gt;</code></pre>
 <p><code><strong>index.js</strong></code></p>
-<pre class="language-javascript line-numbers"><code>function increment() {
+<pre class="language-javascript"><code>function increment() {
   // TODO: Implement increment
 }
 
@@ -72,7 +72,7 @@ function decrement() {
 <h2>Adding state</h2>
 <p>Let’s now implement the functions to update the counter.</p>
 <p><strong>Updated <code>index.js</code></strong></p>
-<pre class="language-javascript line-numbers"><code>let counter = 0;
+<pre class="language-javascript"><code>let counter = 0;
 let counterSpan = document.getElementById("counter");
 
 function updateUI() {
@@ -96,7 +96,7 @@ function decrement() {
 <h2>Phase 2: Move everything to JS</h2>
 <p class="" data-start="2709" data-end="2807">Even though a lot of logic is in JS, our app isn’t <em data-start="2760" data-end="2766">pure</em> JS. We still rely on HTML for structure.</p>
 <p class="" data-start="2809" data-end="2917">The test: if you can tell what the app is doing just by looking at <code data-start="2876" data-end="2888">index.html</code>, we haven’t gone far enough.</p>
-<pre class="language-html line-numbers"><code>&lt;html&gt;
+<pre class="language-html"><code>&lt;html&gt;
 
 &lt;body&gt;
     &lt;!-- Looking at the elements inside the div, we can figure out that it's a counter app --&gt;
@@ -118,7 +118,7 @@ function decrement() {
 &lt;/html&gt;</code></pre>
 <p>So let's move more logic to js. We are going to delete the elements from our html, and write code to create these elements purely in our js code.</p>
 <p>Updated <code><strong>index.js</strong></code></p>
-<pre class="language-javascript line-numbers"><code>let counter = 0;
+<pre class="language-javascript"><code>let counter = 0;
 
 function updateUI() {
   counterSpan.textContent = counter;
@@ -161,7 +161,7 @@ function loadElements() {
 loadElements();
 </code></pre>
 <p><strong>Updated <code>index.html</code></strong></p>
-<pre class="language-html line-numbers"><code>&lt;html&gt;
+<pre class="language-html"><code>&lt;html&gt;
   &lt;body&gt;
     &lt;div id="container"&gt;&lt;/div&gt;
     &lt;script src="/index.js"&gt;&lt;/script&gt;
@@ -174,7 +174,7 @@ loadElements();
 <h3>Phase 3: React-style Composition</h3>
 <p>Our current code works, but doesn’t yet <em data-start="4268" data-end="4274">look</em> like React. Let’s fix that with a more declarative, component-style structure.</p>
 <p><strong>Skeleton code</strong></p>
-<pre class="language-javascript line-numbers"><code>function CounterApp() {
+<pre class="language-javascript"><code>function CounterApp() {
     return [
         Button("Dec", { onClick: decrement }),
         Span(counter),
@@ -182,7 +182,7 @@ loadElements();
     ]
 }</code></pre>
 <p><strong>Component functions</strong></p>
-<pre class="language-javascript line-numbers"><code>function Button(children, { onClick }) {
+<pre class="language-javascript"><code>function Button(children, { onClick }) {
     const btn = document.createElement("button");
     btn.textContent = children;
     btn.onclick = onClick;
@@ -195,14 +195,14 @@ function Span(children) {
     return span;
 }</code></pre>
 <p><strong>Render function</strong></p>
-<pre class="language-javascript line-numbers"><code>function render() {
+<pre class="language-javascript"><code>function render() {
     container.replaceChildren();
     let elements = CounterApp();
     elements.forEach(element =&gt; container.appendChild(element));
 }
 </code></pre>
 <p><strong>Final <code>index.js</code></strong></p>
-<pre class="language-javascript line-numbers"><code>let counter = 0;
+<pre class="language-javascript"><code>let counter = 0;
 
 function increment() {
   counter++;
@@ -247,7 +247,7 @@ render();
 </code></pre>
 <h4>Extracting a Mini Library: ReReact</h4>
 <p>Let’s move our reusable functions to a new file called <code>rereact.js</code>.</p>
-<pre class="language-javascript line-numbers"><code>function Button(children, { onClick }) {
+<pre class="language-javascript"><code>function Button(children, { onClick }) {
   const btn = document.createElement("button");
   btn.textContent = children;
   btn.onclick = onClick;
@@ -276,7 +276,7 @@ function render() {
 }
 </code></pre>
 <p>Update the <strong>index.html</strong></p>
-<pre class="language-html line-numbers"><code>&lt;html&gt;
+<pre class="language-html"><code>&lt;html&gt;
 &lt;body&gt;
     &lt;div id="container"&gt;&lt;/div&gt;
     &lt;!-- Import rereact --&gt;
@@ -285,7 +285,7 @@ function render() {
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
 <p><strong>Cleaned up <code>index.js</code></strong></p>
-<pre class="language-javascript line-numbers"><code>let counter = 0;
+<pre class="language-javascript"><code>let counter = 0;
 
 function increment() {
   counter++;
@@ -311,7 +311,7 @@ createRoot(container, CounterApp);
 <h3>Bonus: Implementing <code data-start="7052" data-end="7062">useState</code></h3>
 <p>Let’s make <code data-start="7075" data-end="7087">useState()</code> so we don’t have to manage state variables or manually make <code data-start="7142" data-end="7152">render()</code> calls.</p>
 <p><strong>Add to <code>rereact.js</code></strong></p>
-<pre class="language-javascript line-numbers"><code>let _state;
+<pre class="language-javascript"><code>let _state;
 
 function useState(initialValue) {
   _state = _state || initialValue;
@@ -327,7 +327,7 @@ function useState(initialValue) {
 }
 </code></pre>
 <p><strong>Final <code>index.js</code></strong></p>
-<pre class="language-javascript line-numbers"><code>function CounterApp() {
+<pre class="language-javascript"><code>function CounterApp() {
   let [counter, setCounter] = useState(0);
 
   return [
