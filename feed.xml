@@ -3,19 +3,19 @@
     <title>awanish.me</title>
     <link href="https://awanish.me/feed.xml" rel="self" />
     <link href="https://awanish.me" />
-    <updated>2025-04-13T16:02:42+05:30</updated>
+    <updated>2025-04-13T16:39:42+05:30</updated>
     <author>
         <name>Awanish Raj</name>
     </author>
     <id>https://awanish.me</id>
 
     <entry>
-        <title>Learn How React Works by Building Your Own Library</title>
+        <title>Learn How React Works by Building Your Own Framework</title>
         <author>
             <name>Awanish Raj</name>
         </author>
-        <link href="https://awanish.me/learn-how-react-works-by-building-your-own-library.html"/>
-        <id>https://awanish.me/learn-how-react-works-by-building-your-own-library.html</id>
+        <link href="https://awanish.me/learn-how-react-works-by-building-your-own-framework.html"/>
+        <id>https://awanish.me/learn-how-react-works-by-building-your-own-framework.html</id>
         <media:content url="https://awanish.me/media/posts/6/Screenshot-2025-04-13-at-3.52.13-PM.png" medium="image" />
             <category term="Programming"/>
 
