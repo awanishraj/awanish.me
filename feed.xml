@@ -3,12 +3,358 @@
     <title>awanish.me</title>
     <link href="https://awanish.me/feed.xml" rel="self" />
     <link href="https://awanish.me" />
-    <updated>2025-04-12T19:21:44+05:30</updated>
+    <updated>2025-04-13T16:02:42+05:30</updated>
     <author>
         <name>Awanish Raj</name>
     </author>
     <id>https://awanish.me</id>
 
+    <entry>
+        <title>Learn How React Works by Building Your Own Library</title>
+        <author>
+            <name>Awanish Raj</name>
+        </author>
+        <link href="https://awanish.me/learn-how-react-works-by-building-your-own-library.html"/>
+        <id>https://awanish.me/learn-how-react-works-by-building-your-own-library.html</id>
+        <media:content url="https://awanish.me/media/posts/6/Screenshot-2025-04-13-at-3.52.13-PM.png" medium="image" />
+            <category term="Programming"/>
+
+        <updated>2025-04-13T10:02:17+05:30</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://awanish.me/media/posts/6/Screenshot-2025-04-13-at-3.52.13-PM.png" alt="" />
+                    Over the last few years, I’ve met several fresh developers who jumped&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <p><img src="https://awanish.me/media/posts/6/Screenshot-2025-04-13-at-3.52.13-PM.png" class="type:primaryImage" alt="" /></p>
+                <p>Over the last few years, I’ve met several fresh developers who jumped straight into React to build web applications. While that’s great, I believe the brilliance of React’s creators really shines when you understand how they transformed HTML+JS into a framework that forever changed front-end development.</p>
+<h2>React is beautiful</h2>
+<ol>
+<li><strong data-start="509" data-end="530">Highly composable</strong> – Incredibly useful for large applications.</li>
+<li><strong data-start="580" data-end="602">Colocated concerns</strong> – You don’t need to jump between files to understand a single component. You don’t even need two languages. It’s just JS(X)!</li>
+</ol>
+<h2>Before React</h2>
+<p>I won’t take you <em data-start="763" data-end="768">too</em> far back. Before React, there was plain HTML+JS. In fact, React ultimately boils down to just HTML and JS anyway. The browser lords didn’t have to change a thing to support React apps—because what gets rendered is still the same old HTML+JS. And that’s where the true brilliance of React lies.</p>
+<h2>Building Our Own Framework: ReReact</h2>
+<p>We’ll go through the following stages in this tutorial:</p>
+<ol>
+<li>A basic HTML + JS counter app as our foundation</li>
+<li>Gradually move everything into JS—no more HTML!</li>
+<li>Make our JS resemble React via composition (templating, JSX-like structure)</li>
+</ol>
+<h3>The Application</h3>
+<p>We’re going to build a simple counter app with 2 buttons and a text box that starts at zero and updates as we click the buttons.</p>
+<h3>Phase 1: Setting up HTML and JS</h3>
+<p>Here’s a basic HTML file that sets up 2 buttons, a span to display the counter, and a script tag to import JavaScript.</p>
+<p><code><strong>index.html</strong></code></p>
+<pre class="language-html line-numbers"><code>&lt;html&gt;
+  &lt;body&gt;
+    &lt;div id="container"&gt;
+      &lt;button onclick="decrement()"&gt;Dec&lt;/button&gt;
+      &lt;span id="counter"&gt;0&lt;/span&gt;
+      &lt;button onclick="increment()"&gt;Inc&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;script src="/index.js"&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p><code><strong>index.js</strong></code></p>
+<pre class="language-javascript line-numbers"><code>function increment() {
+  // TODO: Implement increment
+}
+
+function decrement() {
+  // TODO: Implement decrement
+}</code></pre>
+<p><strong>Output:</strong></p>
+<figure class="post__image"><img loading="lazy"  src="https://awanish.me/media/posts/6/Screenshot-2025-04-13-at-1.22.54-PM.png" alt="" width="1378" height="988" sizes="(min-width: 760px) 660px, calc(93.18vw - 30px)" srcset="https://awanish.me/media/posts/6/responsive/Screenshot-2025-04-13-at-1.22.54-PM-xs.webp 320w ,https://awanish.me/media/posts/6/responsive/Screenshot-2025-04-13-at-1.22.54-PM-sm.webp 480w ,https://awanish.me/media/posts/6/responsive/Screenshot-2025-04-13-at-1.22.54-PM-md.webp 768w ,https://awanish.me/media/posts/6/responsive/Screenshot-2025-04-13-at-1.22.54-PM-xl.webp 1024w"></figure>
+<h2>Adding state</h2>
+<p>Let’s now implement the functions to update the counter.</p>
+<p><strong>Updated <code>index.js</code></strong></p>
+<pre class="language-javascript line-numbers"><code>let counter = 0;
+let counterSpan = document.getElementById("counter");
+
+function updateUI() {
+  counterSpan.textContent = counter;
+}
+
+function increment() {
+  counter++;
+  updateUI();
+}
+
+function decrement() {
+  counter--;
+  updateUI();
+}
+</code></pre>
+<p>Our counter app is now functional!</p>
+<p><strong>Updated Output:</strong></p>
+<figure class="post__image"><img loading="lazy"  src="https://awanish.me/media/posts/6/Screenshot-2025-04-13-at-1.23.26-PM.png" alt="" width="1378" height="988" sizes="(min-width: 760px) 660px, calc(93.18vw - 30px)" srcset="https://awanish.me/media/posts/6/responsive/Screenshot-2025-04-13-at-1.23.26-PM-xs.webp 320w ,https://awanish.me/media/posts/6/responsive/Screenshot-2025-04-13-at-1.23.26-PM-sm.webp 480w ,https://awanish.me/media/posts/6/responsive/Screenshot-2025-04-13-at-1.23.26-PM-md.webp 768w ,https://awanish.me/media/posts/6/responsive/Screenshot-2025-04-13-at-1.23.26-PM-xl.webp 1024w"></figure>
+<p>So far, so good. Phase 1 complete. Let’s move on.</p>
+<h2>Phase 2: Move everything to JS</h2>
+<p class="" data-start="2709" data-end="2807">Even though a lot of logic is in JS, our app isn’t <em data-start="2760" data-end="2766">pure</em> JS. We still rely on HTML for structure.</p>
+<p class="" data-start="2809" data-end="2917">The test: if you can tell what the app is doing just by looking at <code data-start="2876" data-end="2888">index.html</code>, we haven’t gone far enough.</p>
+<pre class="language-html line-numbers"><code>&lt;html&gt;
+
+&lt;body&gt;
+    &lt;!-- Looking at the elements inside the div, we can figure out that it's a counter app --&gt;
+    &lt;div id="container"&gt;
+        &lt;button onclick="decrement()"&gt;
+            Dec
+        &lt;/button&gt;
+        &lt;span id="counter"&gt;
+            0
+        &lt;/span&gt;
+        &lt;button onclick="increment()"&gt;
+            Inc
+        &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;script src="/index.js"&gt;&lt;/script&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+<p>So let's move more logic to js. We are going to delete the elements from our html, and write code to create these elements purely in our js code.</p>
+<p>Updated <code><strong>index.js</strong></code></p>
+<pre class="language-javascript line-numbers"><code>let counter = 0;
+
+function updateUI() {
+  counterSpan.textContent = counter;
+}
+
+function increment() {
+  counter++;
+  updateUI();
+}
+
+function decrement() {
+  counter--;
+  updateUI();
+}
+
+let container = document.getElementById("container");
+
+// Decrement button
+let decrementBtn = document.createElement("button");
+decrementBtn.onclick = decrement;
+decrementBtn.textContent = "Dec";
+
+// Counter span
+let counterSpan = document.createElement("span");
+counterSpan.id = "counter";
+counterSpan.textContent = counter;
+
+// Increment button
+let incrementBtn = document.createElement("button");
+incrementBtn.onclick = increment;
+incrementBtn.textContent = "Inc";
+
+function loadElements() {
+  container.replaceChildren();
+  container.appendChild(decrementBtn);
+  container.appendChild(counterSpan);
+  container.appendChild(incrementBtn);
+}
+
+loadElements();
+</code></pre>
+<p><strong>Updated <code>index.html</code></strong></p>
+<pre class="language-html line-numbers"><code>&lt;html&gt;
+  &lt;body&gt;
+    &lt;div id="container"&gt;&lt;/div&gt;
+    &lt;script src="/index.js"&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>And the app still works!</p>
+<figure class="post__image"><img loading="lazy"  src="https://awanish.me/media/posts/6/Screenshot-2025-04-13-at-2.45.00-PM.png" alt="" width="1272" height="988" sizes="(min-width: 760px) 660px, calc(93.18vw - 30px)" srcset="https://awanish.me/media/posts/6/responsive/Screenshot-2025-04-13-at-2.45.00-PM-xs.webp 320w ,https://awanish.me/media/posts/6/responsive/Screenshot-2025-04-13-at-2.45.00-PM-sm.webp 480w ,https://awanish.me/media/posts/6/responsive/Screenshot-2025-04-13-at-2.45.00-PM-md.webp 768w ,https://awanish.me/media/posts/6/responsive/Screenshot-2025-04-13-at-2.45.00-PM-xl.webp 1024w"></figure>
+<p>🎉 We’ve completed Phase 2. Our app is now fully JavaScript-driven!</p>
+<h3>Phase 3: React-style Composition</h3>
+<p>Our current code works, but doesn’t yet <em data-start="4268" data-end="4274">look</em> like React. Let’s fix that with a more declarative, component-style structure.</p>
+<p><strong>Skeleton code</strong></p>
+<pre class="language-javascript line-numbers"><code>function CounterApp() {
+    return [
+        Button("Dec", { onClick: decrement }),
+        Span(counter),
+        Button("Inc", { onClick: increment }),
+    ]
+}</code></pre>
+<p><strong>Component functions</strong></p>
+<pre class="language-javascript line-numbers"><code>function Button(children, { onClick }) {
+    const btn = document.createElement("button");
+    btn.textContent = children;
+    btn.onclick = onClick;
+    return btn;
+}
+
+function Span(children) {
+    const span = document.createElement("span");
+    span.textContent = children;
+    return span;
+}</code></pre>
+<p><strong>Render function</strong></p>
+<pre class="language-javascript line-numbers"><code>function render() {
+    container.replaceChildren();
+    let elements = CounterApp();
+    elements.forEach(element =&gt; container.appendChild(element));
+}
+</code></pre>
+<p><strong>Final <code>index.js</code></strong></p>
+<pre class="language-javascript line-numbers"><code>let counter = 0;
+
+function increment() {
+  counter++;
+  render();
+}
+
+function decrement() {
+  counter--;
+  render();
+}
+
+let container = document.getElementById("container");
+
+function Button(children, { onClick }) {
+  const btn = document.createElement("button");
+  btn.textContent = children;
+  btn.onclick = onClick;
+  return btn;
+}
+
+function Span(children) {
+  const span = document.createElement("span");
+  span.textContent = children;
+  return span;
+}
+
+function CounterApp() {
+  return [
+    Button("Dec", { onClick: decrement }),
+    Span(counter),
+    Button("Inc", { onClick: increment }),
+  ];
+}
+
+function render() {
+  container.replaceChildren();
+  let elements = CounterApp();
+  elements.forEach(el =&gt; container.appendChild(el));
+}
+
+render();
+</code></pre>
+<h4>Extracting a Mini Library: ReReact</h4>
+<p>Let’s move our reusable functions to a new file called <code>rereact.js</code>.</p>
+<pre class="language-javascript line-numbers"><code>function Button(children, { onClick }) {
+  const btn = document.createElement("button");
+  btn.textContent = children;
+  btn.onclick = onClick;
+  return btn;
+}
+
+function Span(children) {
+  const span = document.createElement("span");
+  span.textContent = children;
+  return span;
+}
+
+let root;
+let app;
+
+function createRoot(container, component) {
+  root = container;
+  app = component;
+  render();
+}
+
+function render() {
+  root.replaceChildren();
+  let elements = app();
+  elements.forEach(el =&gt; root.appendChild(el));
+}
+</code></pre>
+<p>Update the <strong>index.html</strong></p>
+<pre class="language-html line-numbers"><code>&lt;html&gt;
+&lt;body&gt;
+    &lt;div id="container"&gt;&lt;/div&gt;
+    &lt;!-- Import rereact --&gt;
+    &lt;script src="/rereact.js"&gt;&lt;/script&gt;
+    &lt;script src="/index.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p><strong>Cleaned up <code>index.js</code></strong></p>
+<pre class="language-javascript line-numbers"><code>let counter = 0;
+
+function increment() {
+  counter++;
+  render();
+}
+
+function decrement() {
+  counter--;
+  render();
+}
+
+function CounterApp() {
+  return [
+    Button("Dec", { onClick: decrement }),
+    Span(counter),
+    Button("Inc", { onClick: increment }),
+  ];
+}
+
+let container = document.getElementById("container");
+createRoot(container, CounterApp);
+</code></pre>
+<h3>Bonus: Implementing <code data-start="7052" data-end="7062">useState</code></h3>
+<p>Let’s make <code data-start="7075" data-end="7087">useState()</code> so we don’t have to manage state variables or manually make <code data-start="7142" data-end="7152">render()</code> calls.</p>
+<p><strong>Add to <code>rereact.js</code></strong></p>
+<pre class="language-javascript line-numbers"><code>let _state;
+
+function useState(initialValue) {
+  _state = _state || initialValue;
+
+  function setState(newVal) {
+    if (_state !== newVal) {
+      _state = newVal;
+      render();
+    }
+  }
+
+  return [_state, setState];
+}
+</code></pre>
+<p><strong>Final <code>index.js</code></strong></p>
+<pre class="language-javascript line-numbers"><code>function CounterApp() {
+  let [counter, setCounter] = useState(0);
+
+  return [
+    Button("Dec", { onClick: () =&gt; setCounter(counter - 1) }),
+    Span(counter),
+    Button("Inc", { onClick: () =&gt; setCounter(counter + 1) }),
+  ];
+}
+
+let container = document.getElementById("container");
+createRoot(container, CounterApp);
+</code></pre>
+<p>And voila, we have (Re)React! 🚀</p>
+<h2>Conclusion</h2>
+<p class="" data-start="7788" data-end="7841">The current implementation is obviously very limited:</p>
+<ul>
+<li data-start="7845" data-end="7892">Only 2 built-in components: <code data-start="7873" data-end="7879">Span</code> and <code data-start="7884" data-end="7892">Button</code></li>
+<li data-start="7895" data-end="7937">Only supports arrays, no component nesting</li>
+<li data-start="7940" data-end="7993"><code data-start="7940" data-end="7952">useState()</code> is global – so only one state is allowed</li>
+<li data-start="7996" data-end="8022">No JSX compiler or diffing</li>
+</ul>
+<p class="" data-start="8024" data-end="8212">But that’s not the point. This was a fun exercise to explore how React-like patterns emerge from vanilla HTML+JS. I hope this helped you appreciate the design behind frameworks like React.</p>
+<p data-start="8024" data-end="8212">Download the project files: <a href="https://awanish.me/rereact_demo.zip" target="_blank" rel="noopener noreferrer">rereact_demo.zip</a><a href="https://awanish.me/rereact_demo.zip" target="_blank" rel="noopener noreferrer"></a></p>
+<p class="" data-start="8214" data-end="8233">Thanks for reading!</p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>This world was not meant for us!</title>
         <author>
