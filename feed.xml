@@ -3,7 +3,7 @@
     <title>awanish.me</title>
     <link href="https://awanish.me/feed.xml" rel="self" />
     <link href="https://awanish.me" />
-    <updated>2025-08-09T00:17:41+05:30</updated>
+    <updated>2025-08-09T00:26:29+05:30</updated>
     <author>
         <name>Awanish Raj</name>
     </author>
@@ -16,17 +16,20 @@
         </author>
         <link href="https://awanish.me/jobs-of-the-future-a-startup-founders-perspective.html"/>
         <id>https://awanish.me/jobs-of-the-future-a-startup-founders-perspective.html</id>
+        <media:content url="https://awanish.me/media/posts/8/ChatGPT-Image-Aug-9-2025-12_26_07-AM.png" medium="image" />
             <category term="Technology"/>
             <category term="Programming"/>
 
         <updated>2025-08-09T00:16:57+05:30</updated>
             <summary>
                 <![CDATA[
+                        <img src="https://awanish.me/media/posts/8/ChatGPT-Image-Aug-9-2025-12_26_07-AM.png" alt="" />
                     I spent $1,000 on AI coding tools over the last two months&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
+                    <p><img src="https://awanish.me/media/posts/8/ChatGPT-Image-Aug-9-2025-12_26_07-AM.png" class="type:primaryImage" alt="" /></p>
                 <p data-start="224" data-end="323">I spent $1,000 on AI coding tools over the last two months to get a peek into the future of work.</p>
 <p data-start="325" data-end="601">I’ve been running a company for the last 10 years, and all the learnings from that journey are suddenly coming to the forefront. AI — and the idea of intelligence being harnessed at scale — forces you to look deeper into what work really is and what it will become tomorrow.</p>
 <p data-start="603" data-end="832">Think of it this way: in a world where gold is incredibly valuable, what happens if a company invents a machine that can make unlimited gold? The value of gold crashes. And then the real question becomes — what now holds value?</p>
